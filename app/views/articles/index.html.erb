@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>NUESTROS ARTÍCULOS</h1>
+  <div class="row">
+      <% @articles.each do |article| %>
+        <div class="col-md-4">
+        
+          <div class="card-product mt-4 card-product-foto">
+            <%= image_tag article.photo1, :width=> 200 %>
+            <div class="card-product-infos mt-4">
+              <h2><strong><%= article.name.capitalize %></strong></h2>
+              <p>Autor : <strong><%= article.user.email %></strong></p>
+              <p>Precio : $ <%= article.price %></p>
+              <p>Precio con descuento : $ <%= article.price_discount %></p>
+              <p>Descripción : <%= article.description %></p>
+              <%= link_to 'Detalle', article_path(article), class:"btn btn-primary btn btn-primary edit-btn mb-2 mt-2"%>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+</div>

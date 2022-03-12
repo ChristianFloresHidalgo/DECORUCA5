@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>SHOW ..... MUESTRA ARTICULO</h1>
+
+  <div class="container">
+    <div class="row", style="margin-top: 100px;">
+      <div class="col-sm-4">
+          <%= image_tag @article.photo1, :width=> 300 %>
+      </div>
+
+      <div class="col-sm-8">
+        <h3 class="card-title"><strong><%= @article.name.capitalize%></strong></h3>
+        <h5 class="card-subtitle mb-2 text-muted mt-4">Precio: $<%= @article.price%></h5>
+        <h5 class="card-subtitle mb-2 text-muted mt-4">Precio con descuento: $<%= @article.price_discount%></h5>
+        <h5 class="card-subtitle mb-2 text-muted mt-4">Stock: <%= @article.stock  %></h5>
+        <h5 class="card-subtitle mb-2 text-muted mt-4">Descripción: <%= @article.description.capitalize%></h5>
+        <p>Autor : <strong><%= @article.user.email %></strong></p>
+        <% if policy(@article).edit? %>
+          <%= link_to 'Editar', edit_article_path(@article), class:"btn btn-primary edit-btn-show mb-2 mt-4"%>
+
+          <%= link_to 'Eliminar', article_path(@article), method: :delete,class:"btn btn-primary edit-btn-show mb-2 mt-4" %>
+        <% end %>
+        <%= link_to 'Volver', articles_path, class:"btn btn-primary edit-btn-show mb-2 mt-4"%>
+      </div>
+
+      
+    </div>
+  </div>
+
+</div>
+

@@ -1,0 +1,43 @@
+<div class="container">
+    <%= simple_form_for @article do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :name,
+                  label: "Nombre del artículo",
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "Nombre del nuevo Artículo" }%>
+      <%= f.input :price,
+                  label: "Precio del Artículo CLP",
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "Precio del Artículo CLP" }%>
+      <%= f.input :price_discount,
+                  label: "Precio del Artículo CON DESCUENTO CLP",
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "Precio del Artículo CON DESCUENTO CLP" }%>
+      <%= f.input :description,
+                  label: "Descripción del Artículo",
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "Descripción del nuevo Artículo" }%>
+      <%= f.input :stock,
+                  label: "Stock del Artículo",
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "Stock del Artículo" }%>
+      <%= f.input :photo1,
+                  label: "Adjunta una foto del Artículo",
+                  required: true %>
+      <%= f.input :photo2,
+                  label: "Adjunta una segunda foto del Artículo, si es necesario",
+                  required: true %>
+    </div>
+
+    <div class="form-actions">
+    <%= f.button :submit, "Crear", class:"btn btn-primary new-user-btn mb-2 mt-3" %>
+    </div>
+  <% end %>
+</div>
