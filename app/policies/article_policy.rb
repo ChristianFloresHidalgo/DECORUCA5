@@ -31,3 +31,4 @@ class ArticlePolicy < ApplicationPolicy
     user.admin?
   end
 end
+
